@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input,
+img {
+  display: block;
+}
+
+.one,
+.two,
+.three,
+.four,
+.footer {
+  /* display: block; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 5em;
+  /* background-color: green; */
+  border-radius: 8px;
+  height: 60vh;
+}
+.header {
+  display: flex;
+  flex-flow: column;
+  padding: 3em;
+  background-image: url("./images/bg-hero-desktop.svg");
+  background-size: cover;
+  background-color: hsl(192, 100%, 9%)
+  width: 100%;
+}
+.header .box1 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-logo {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  /* padding: 2em 18em 2em 5em; */
+}
+
+img[src$=".svg"]:not(.contact-me):not(.logo) {
+  width: 25em;
+  height: 20em;
+  border: solid blue 2px;
+}
+.logo {
+  width: 10em;
+  height: 2em;
+}
+
+.box1,
+.box2 {
+  flex: 1 1 250px;
+  /* overflow: cover; */
+}
+.footer{
+    background-color: hsl(192, 100%, 9%);
+    /* width: 100%; */
+    color: white;
+    margin: 0;
+    border-radius: 0;
+    padding: 3em;
+}
+
+.footer .logo{
+    filter: invert();
+}
