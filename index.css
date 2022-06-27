@@ -1,5 +1,17 @@
-* {
+body {
+  font-family: "Big Shoulders Display", cursive;
+  font-family: "Lexend Deca", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+body,
+.header,
+.one {
+  display: block;
   box-sizing: border-box;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -7,76 +19,230 @@
 .main {
   display: flex;
   flex-flow: column;
+  justify-content: center;
+  position: relative;
+  /* align-items: center; */
+}
+
+.header {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-image: url("./images/bg-hero-desktop.svg");
+  background-color: hsl(193, 100%, 96%);
+  font-weight: 400;
+  padding: 3em;
+  width: 100%;
+}
+
+.btn-logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.one {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: blue dashed 3px; */
 }
 
-input,
-img {
-  display: block;
+.h-box1 {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 45%;
+  padding: 7em;
+  padding-left: 0;
+  /* border: solid green 2px; */
 }
 
-.one,
+.h-box1 button,
+.small-red {
+  width: 15em;
+  height: 4em;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: hsl(322, 100%, 66%);
+  color: white;
+}
+
+.h-box2 {
+  display: flex;
+  width: 55%;
+  /* border: solid yellow 2px; */
+}
+.h-box2 img {
+  flex: 1;
+  display: inline-block;
+  width: 100%;
+}
+
+.white-button {
+  border-radius: 25px;
+  width: 12em;
+  height: 3em;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+}
+
 .two,
 .three,
 .four,
 .footer {
-  /* display: block; */
+  box-sizing: border-box;
+  display: flex;
+
+  align-items: center;
+  background-color: rgba(220, 220, 220, 0.503);
+  box-shadow: 0px 0px 5px grey;
+  border-radius: 8px;
+  padding: 1.3em 1.1em 1.3em 4em;
+}
+
+.box1 {
+  margin-right: 5em;
+}
+
+.two img,
+.three img,
+.four img {
+  width: 100%;
+}
+
+.wrapper {
+  padding: 1em 5em 1em;
+}
+
+.four {
+  margin-bottom: 15em;
+}
+
+/* .main {
+  border: 2px solid green;
+} */
+
+.displaced {
+  display: flex;
+  flex-flow: column;
+  /* justify-content: center; */
+
+  text-align: center;
+  align-items: center;
+  width: 50%;
+  height: 8em;
+  background-color: rgb(220, 220, 220);
+  box-shadow: 0px 0px 5px grey;
+
+  padding: 3em;
+  border-radius: 10px;
+  position: absolute;
+  /* right: auto; */
+  bottom: -5em;
+  left: 23%;
+  margin: auto;
+}
+.displaced button {
+  width: 40%;
+  font-size: 1em;
+}
+
+.footer {
+  background-color: hsl(192, 100%, 9%);
+  width: 100%;
+  color: white;
+  margin: 0;
+  border-radius: 0;
+  padding: 3em;
+  padding-top: 10em;
+}
+
+.footer .logo {
+  filter: invert();
+}
+
+/* input,
+img {
+  display: block;
+} */
+/* 
+.two,
+.three,
+.four,
+.footer { */
+/* display: block;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: ;
   align-items: center;
   margin: 1em 5em;
-  /* background-color: green; */
+  background-color: green;
   border-radius: 8px;
   height: 60vh;
-}
+  padding: 3em;
+} 
 .header {
   display: flex;
   flex-flow: column;
   padding: 3em;
   background-image: url("./images/bg-hero-desktop.svg");
   background-size: cover;
-  background-color: hsl(192, 100%, 9%)
+  background-color: hsl(193, 100%, 96%);
   width: 100%;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  border: solid yellow 2px;
 }
-.header .box1 {
+.header .one,
+.btn-logo {
+  display: flex;
+  flex: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 30%; */
+/* padding: 2em 18em 2em 5em; */
+/* } */
+
+/* .header .box1 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-}
-.btn-logo {
-  display: flex;
-  flex: row;
-  justify-content: space-between;
-  /* padding: 2em 18em 2em 5em; */
-}
+} */
+/* img[src$=".svg"]:not(.contact-me):not(.logo):not {
+  width: 25em;
+  height: 20em;}  */
 
-img[src$=".svg"]:not(.contact-me):not(.logo) {
+/* img[src$=".svg"]:not(.contact-me):not(.logo) {
   width: 25em;
   height: 20em;
-  border: solid blue 2px;
-}
-.logo {
+  /* border: solid blue 2px;} */
+/* img[src="./images/illustration-mockups.svg"] {
+  width: 500em;
+  height: 40em;
+} */
+/* .logo {
   width: 10em;
   height: 2em;
 }
+/* .btn-logo .logo {
+  width: 60em;
+} */
 
-.box1,
+/* .box1,
 .box2 {
   flex: 1 1 250px;
   /* overflow: cover; */
-}
-.footer{
-    background-color: hsl(192, 100%, 9%);
-    /* width: 100%; */
-    color: white;
-    margin: 0;
-    border-radius: 0;
-    padding: 3em;
-}
 
-.footer .logo{
-    filter: invert();
+h1,
+h3 {
+  font-family: "Big Shoulders Display", cursive;
+  font-family: "Lexend Deca", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
