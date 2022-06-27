@@ -9,7 +9,8 @@ body {
 
 body,
 .header,
-.one {
+.one,
+.footer {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -53,6 +54,8 @@ body,
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  align-items: center;
+
   width: 45%;
   padding: 7em;
   padding-left: 0;
@@ -101,8 +104,6 @@ body,
 .footer {
   box-sizing: border-box;
   display: flex;
-  /* flex-flow: row wrap; */
-
   align-items: center;
   background-color: rgba(220, 220, 220, 0.503);
   box-shadow: 0px 0px 5px grey;
@@ -163,9 +164,31 @@ body,
   border-radius: 0;
   padding: 3em;
   padding-top: 10em;
+  justify-content: space-around;
 }
 
 .footer .logo {
+  filter: invert();
+}
+.f-1,
+.f-2,
+.f-3 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.contact-me {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
+.font-icon {
+  display: flex;
+  justify-content: space-around;
+}
+
+.font-icon svg {
   filter: invert();
 }
 
@@ -177,5 +200,39 @@ h3 {
   font-weight: 600;
 }
 
-@media and (max-width: 700px) {
+.displaced button:active {
+  background-color: hsla(322, 100%, 66%, 0.377);
+}
+@media screen and (max-width: 700px) {
+  .header {
+    width: 100%;
+  }
+  .h-box1 {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    padding-left: 8em;
+  }
+  .h-box1 p {
+    font-size: 1.5em;
+  }
+  .two,
+  .four {
+    flex-flow: column-reverse;
+  }
+
+  .three {
+    flex-flow: column;
+  }
+  .footer {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .font-icon {
+    align-self: center;
+    margin: 3em;
+  }
+  .font-icon svg {
+    margin-right: 1em;
+  }
 }
