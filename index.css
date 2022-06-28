@@ -204,6 +204,14 @@ h3 {
   background-color: hsla(322, 100%, 66%, 0.377);
 }
 @media screen and (max-width: 700px) {
+  .box1 {
+    border: solid blue 2px;
+    margin-right: 0;
+  }
+
+  .h-box2 {
+    text-align: center;
+  }
   .header {
     width: 100%;
   }
@@ -213,17 +221,32 @@ h3 {
     flex-flow: column;
     padding-left: 8em;
   }
+  .header {
+    padding: 1.5em;
+  }
+  .wrapper {
+    padding: 0.8em 2em 0.8em;
+  }
+  .two,
+  .three,
+  .four {
+    padding: 0.9em 0.8em 0.9em 1em;
+  }
+
   .h-box1 p {
     font-size: 1.5em;
   }
   .two,
   .four {
     flex-flow: column-reverse;
+    /* text-align: center; */
   }
 
   .three {
     flex-flow: column;
+    /* text-align: center; */
   }
+
   .footer {
     flex-flow: column;
     align-items: flex-start;
@@ -234,5 +257,29 @@ h3 {
   }
   .font-icon svg {
     margin-right: 1em;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 15px;
+  }
+  .logo {
+    width: 5em;
+  }
+  .h-box1 button,
+  .displaced button {
+    width: 13em;
+    font-size: 0.7em;
+  }
+  .white-button {
+    border-radius: 20px;
+    width: 7em;
+    height: 1.5em;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: black;
+    font-size: smaller;
   }
 }
