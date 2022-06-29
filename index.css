@@ -36,6 +36,13 @@ body,
   padding: 3em;
   width: 100%;
 }
+h1,
+h3 {
+  font-family: "Big Shoulders Display", cursive;
+  font-family: "Lexend Deca", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
 
 .btn-logo {
   display: flex;
@@ -47,7 +54,6 @@ body,
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  /* border: blue dashed 3px; */
 }
 
 .h-box1 {
@@ -59,7 +65,9 @@ body,
   width: 45%;
   padding: 7em;
   padding-left: 0;
-  /* border: solid green 2px; */
+  animation-name: position;
+  animation-duration: 5s;
+  animation-delay: s;
 }
 
 .h-box1 button,
@@ -79,7 +87,8 @@ body,
   display: flex;
   width: 55%;
   flex: 1;
-  /* border: solid yellow 2px; */
+  animation-name: displacement;
+  animation-duration: 5s;
 }
 .h-box2 img {
   flex: 1;
@@ -100,8 +109,7 @@ body,
 
 .two,
 .three,
-.four,
-.footer {
+.four {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -129,10 +137,6 @@ body,
   margin-bottom: 15em;
 }
 
-/* .main {
-  border: 2px solid green;
-} */
-
 .displaced {
   display: flex;
   flex-flow: column;
@@ -142,7 +146,6 @@ body,
   height: 8em;
   background-color: rgb(220, 220, 220);
   box-shadow: 0px 0px 5px grey;
-
   padding: 3em;
   border-radius: 10px;
   position: absolute;
@@ -150,12 +153,21 @@ body,
   left: 50%;
   transform: translateX(-50%);
   margin: auto;
+  animation-name: displaced;
+  animation-duration: 7s;
+  animation-delay: 1s;
 }
+
 .displaced button {
   width: 18em;
   font-size: 1em;
 }
 
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 .footer {
   background-color: hsl(192, 100%, 9%);
   width: 100%;
@@ -164,7 +176,10 @@ body,
   border-radius: 0;
   padding: 3em;
   padding-top: 10em;
-  justify-content: space-around;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .footer .logo {
@@ -186,26 +201,79 @@ body,
 .font-icon {
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
 }
 
 .font-icon svg {
   filter: invert();
+  margin-right: 0.5em;
 }
 
-h1,
-h3 {
-  font-family: "Big Shoulders Display", cursive;
-  font-family: "Lexend Deca", sans-serif;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+.huddle {
+  width: 40%;
 }
+
+.copyright {
+  align-self: flex-end;
+}
+
+/* ..............................ANIMATION DEFINITION................................ */
+
+@keyframes displacement {
+  0% {
+    z-index: inherit;
+    transform: translate(0, 0);
+  }
+  25% {
+    z-index: -2;
+    transform: rotate3d(23);
+  }
+  50% {
+    z-index: 20;
+    transform: translate(5%, 10%);
+  }
+  50% {
+    z-index: 2;
+    transform: translate(-5%, -10%);
+  }
+  100% {
+    z-index: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes position {
+  from {
+    transform: translateX(50%);
+    transform: rotate(360deg);
+    z-index: 2;
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+@keyframes displaced {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  100% {
+    transform: translateY(100%);
+    z-index: -1;
+  }
+}
+
+/* 
+........................Active state.................................. */
 
 .displaced button:active {
   background-color: hsla(322, 100%, 66%, 0.377);
 }
+
+/* ..........media Query ..................... */
+
 @media screen and (max-width: 700px) {
   .box1 {
-    border: solid blue 2px;
     margin-right: 0;
   }
 
@@ -239,24 +307,36 @@ h3 {
   .two,
   .four {
     flex-flow: column-reverse;
-    /* text-align: center; */
   }
 
   .three {
     flex-flow: column;
-    /* text-align: center; */
+  }
+
+  .footer-wrapper {
+    flex-flow: column;
   }
 
   .footer {
-    flex-flow: column;
-    align-items: flex-start;
+    font-size: 0.8em;
+    padding: 1.8em;
+    padding-top: 7em;
+  }
+
+  .huddle {
+    width: 100%;
   }
   .font-icon {
     align-self: center;
-    margin: 3em;
   }
+
   .font-icon svg {
-    margin-right: 1em;
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+  }
+  .copyright {
+    align-self: center;
   }
 }
 
@@ -281,5 +361,10 @@ h3 {
     background-color: white;
     color: black;
     font-size: smaller;
+  }
+  .font-icon svg {
+    margin-right: 0.3em;
+    width: 16px;
+    height: 16px;
   }
 }
