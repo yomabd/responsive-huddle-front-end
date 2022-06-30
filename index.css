@@ -8,34 +8,38 @@ body {
 }
 
 body,
+.wrapper,
+.main,
 .header,
 .one,
+.h-box1,
+.h-box2,
+.two,
+.three,
+.four,
 .footer {
-  display: block;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.main {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  position: relative;
-  /* align-items: center; */
-}
-
+.main,
 .header {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  position: relative;
+}
+
+.header {
   background-image: url("./images/bg-hero-desktop.svg");
   background-color: hsl(193, 100%, 96%);
   font-weight: 400;
   padding: 3em;
-  width: 100%;
+  margin-bottom: 5em;
 }
+
 h1,
 h3 {
   font-family: "Big Shoulders Display", cursive;
@@ -44,57 +48,49 @@ h3 {
   font-weight: 600;
 }
 
-.btn-logo {
-  display: flex;
-  justify-content: space-between;
-}
-
+.btn-logo,
 .one {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
 }
 
 .h-box1 {
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
   width: 45%;
-  padding: 7em;
-  padding-left: 0;
-  animation-name: position;
-  animation-duration: 5s;
-  animation-delay: s;
+  margin-right: 2em;
+  animation: h-box1 5s linear 1s;
+  animation-direction: reverse;
 }
 
 .h-box1 button,
-.small-red {
+.displaced button {
   width: 15em;
-  height: 4em;
+  height: 3em;
   font-weight: 700;
-  border-radius: 25px;
+  border-radius: 35px;
   border: none;
   outline: none;
   background-color: hsl(322, 100%, 66%);
   color: white;
   font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 3s ease-in-out;
 }
 
 .h-box2 {
-  display: flex;
   width: 55%;
-  flex: 1;
-  animation-name: displacement;
-  animation-duration: 5s;
+  animation: h-box2 5s;
+  animation-direction: alternate;
 }
 .h-box2 img {
-  flex: 1;
-  display: inline-block;
   width: 100%;
-  height: 30em;
+  height: 28em;
 }
 
 .white-button {
@@ -103,8 +99,9 @@ h3 {
   height: 3em;
   border: none;
   outline: none;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.598);
   color: black;
+  transition: all 2s linear;
 }
 
 .two,
@@ -142,8 +139,9 @@ h3 {
   flex-flow: column;
   text-align: center;
   align-items: center;
+  justify-content: center;
   width: 50%;
-  height: 8em;
+  height: 6em;
   background-color: rgb(220, 220, 220);
   box-shadow: 0px 0px 5px grey;
   padding: 3em;
@@ -152,14 +150,12 @@ h3 {
   bottom: -5em;
   left: 50%;
   transform: translateX(-50%);
-  margin: auto;
-  animation-name: displaced;
-  animation-duration: 7s;
-  animation-delay: 1s;
+  animation: displaced 5s 3;
+  animation-direction: alternate-reverse;
+  animation-delay: 0.5s;
 }
 
 .displaced button {
-  width: 18em;
   font-size: 1em;
 }
 
@@ -182,7 +178,8 @@ h3 {
   align-items: flex-start;
 }
 
-.footer .logo {
+.footer .logo,
+.font-icon svg {
   filter: invert();
 }
 .f-1,
@@ -205,8 +202,8 @@ h3 {
 }
 
 .font-icon svg {
-  filter: invert();
   margin-right: 0.5em;
+  /* background-color: transparent; */
 }
 
 .huddle {
@@ -217,57 +214,110 @@ h3 {
   align-self: flex-end;
 }
 
+/* 
+........................Active state.................................. */
+
+.displaced button:hover,
+.h-box1 button:hover {
+  background-color: hsla(322, 100%, 66%, 0.269);
+  cursor: pointer;
+}
+
+.white-button:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.about-us p:hover,
+.contact p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  animation: link 2s;
+  animation-direction: reverse;
+}
+
+.font-icon svg:hover {
+  filter: invert();
+  background-color: rgb(14, 228, 14);
+}
+
 /* ..............................ANIMATION DEFINITION................................ */
 
-@keyframes displacement {
+@keyframes h-box1 {
   0% {
-    z-index: inherit;
-    transform: translate(0, 0);
+    transform: rotateX(45deg);
   }
   25% {
-    z-index: -2;
-    transform: rotate3d(23);
+    transform: rotate(90deg);
   }
   50% {
-    z-index: 20;
-    transform: translate(5%, 10%);
+    z-index: 1;
+    transform: translateX(50%);
   }
-  50% {
-    z-index: 2;
-    transform: translate(-5%, -10%);
+  75% {
+    transform: rotate(360deg);
   }
   100% {
-    z-index: 1;
+    z-index: 0;
     transform: translate(0, 0);
   }
 }
-@keyframes position {
-  from {
-    transform: translateX(50%);
-    transform: rotate(360deg);
-    z-index: 2;
+@keyframes h-box2 {
+  0% {
+    transform: skew(50%);
   }
-  to {
-    transform: translateY(-50%);
+  25% {
+    transform: rotateX(-45deg);
+  }
+  50% {
+    transform: rotate(-360%);
+  }
+  75% {
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 @keyframes displaced {
   0% {
-    bottom: 0;
-    left: 0;
+    transform: skewX(-10px);
+    opacity: 0.5;
   }
 
-  100% {
-    transform: translateY(100%);
+  25% {
+    transform: skewY(10%);
     z-index: -1;
+    opacity: 1;
+  }
+  50% {
+    transform: skewY(-10%);
+    z-index: 1;
+    opacity: 0.5;
+  }
+  75% {
+    transform: rotate(-360deg);
+    transform: scale(0.5);
+  }
+  100% {
+    z-index: 0;
   }
 }
 
-/* 
-........................Active state.................................. */
-
-.displaced button:active {
-  background-color: hsla(322, 100%, 66%, 0.377);
+@keyframes link {
+  25% {
+    text-decoration: dotted;
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* ..........media Query ..................... */
@@ -277,28 +327,32 @@ h3 {
     margin-right: 0;
   }
 
-  .h-box2 {
-    text-align: center;
-  }
   .header {
     width: 100%;
   }
-  .h-box1 {
-    width: 80%;
+  .one {
+    width: 100%;
     display: flex;
     flex-flow: column;
-    padding-left: 8em;
   }
+  .one .h-box1,
+  .h-box2 {
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+  }
+
   .header {
     padding: 1.5em;
   }
   .wrapper {
-    padding: 0.8em 2em 0.8em;
+    padding: 1.8em 2em 1.8em;
   }
   .two,
   .three,
   .four {
-    padding: 0.9em 0.8em 0.9em 1em;
+    padding: 5em 4em 4em 5em;
+    text-align: center;
   }
 
   .h-box1 p {
@@ -308,9 +362,45 @@ h3 {
   .four {
     flex-flow: column-reverse;
   }
+  .box2:not(.three .box2) {
+    margin-bottom: 4em;
+  }
 
   .three {
     flex-flow: column;
+  }
+  .three .box1 {
+    margin-bottom: 4em;
+  }
+
+  .four {
+    margin-bottom: 4em;
+  }
+
+  .d-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 1.8em 2em 1.8em;
+    display: flex;
+  }
+  .displaced {
+    flex: 1;
+    position: static;
+    height: 5.5em;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    transform: translateY(50%);
+  }
+
+  .h-box1 button,
+  .displaced button {
+    box-sizing: border-box;
+    width: 75%;
+    font-size: 0.75em;
+    font-weight: normal;
+    padding: 1.8em;
   }
 
   .footer-wrapper {
@@ -344,13 +434,24 @@ h3 {
   body {
     font-size: 15px;
   }
+
+  .wrapper {
+    padding: 1.5em;
+  }
+  .two,
+  .three,
+  .four {
+    padding: 3em;
+  }
+
   .logo {
     width: 5em;
   }
   .h-box1 button,
   .displaced button {
-    width: 13em;
-    font-size: 0.7em;
+    width: 70%;
+    font-size: 0.9em;
+    padding: 1.5em;
   }
   .white-button {
     border-radius: 20px;
@@ -362,9 +463,26 @@ h3 {
     color: black;
     font-size: smaller;
   }
+
+  .four {
+    margin-bottom: 1em;
+  }
   .font-icon svg {
     margin-right: 0.3em;
     width: 16px;
     height: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .h-box1 button,
+  .displaced button {
+    width: 80%;
+    font-size: 0.6em;
+    padding: 1.5em;
+  }
+
+  .four {
+    margin-bottom: 0.5em;
   }
 }
