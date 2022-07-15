@@ -178,10 +178,13 @@ h3 {
   align-items: flex-start;
 }
 
-.footer .logo,
 .font-icon svg {
-  filter: invert();
+  filter: brightness(0) invert(1);
 }
+.footer .logo {
+  filter: brightness(0) invert(1);
+}
+
 .f-1,
 .f-2,
 .f-3 {
@@ -339,7 +342,8 @@ h3 {
   .h-box2 {
     width: 100%;
     text-align: center;
-    padding: 1.8em;
+    padding: 1.9em;
+    font-size: smaller;
   }
 
   .header {
@@ -432,7 +436,7 @@ h3 {
 
 @media (max-width: 500px) {
   body {
-    font-size: 15px;
+    font-size: 0.8em;
   }
 
   .wrapper {
@@ -445,11 +449,11 @@ h3 {
   }
 
   .logo {
-    width: 5em;
+    width: 7em;
   }
   .one .h-box1,
   .h-box2 {
-    padding: 1.2em;
+    padding: 1.5em;
   }
   .h-box1 button,
   .displaced button {
@@ -481,9 +485,10 @@ h3 {
 @media screen and (max-width: 400px) {
   .h-box1 button,
   .displaced button {
-    width: 80%;
-    font-size: 0.6em;
+    width: 65%;
+    font-size: 0.65em;
     padding: 1.5em;
+    height: 2em;
   }
 
   .four {
@@ -491,6 +496,6 @@ h3 {
   }
   .one .h-box1,
   .h-box2 {
-    padding: 0.9em;
+    padding: 1.5em;
   }
 }
